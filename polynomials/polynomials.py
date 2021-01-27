@@ -24,6 +24,15 @@ class Polynomial:
          # Sum polynomial terms from high to low exponent.
         return " + ".join(reversed(terms)) or "0"
 
-        
+    def __repr__(self):
+
+        return self.__class__.__name__  + "(" + repr(self.coefficients) + ")"
+
+    def __eq__(self, other):
+
+        return isinstance(other, Polynomial) and\
+            self.coefficients == other.coefficients
+
+
 
         
